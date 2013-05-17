@@ -2,6 +2,7 @@
   (:use
     [compojure.core :only (defroutes GET POST)]
     [compojure.route :only (not-found)]
+    [ring.util.response :refer [redirect]]
     [joodo.middleware.request :refer [*request*]]
     [joodo.util.pretty-map :refer [pretty-map]]
     [joodo.middleware.view-context :only (wrap-view-context)]
@@ -24,7 +25,7 @@
   (GET "/"  [] (render-template "index"))
   (POST "/" [] (pretty-map-it))
   (controller-router 'clj-pprint.controller)
-  (not-found (render-template "not_found" :template-root "clj_pprint/view" :ns `clj-pprint.view.view-helpers)))
+  (not-found (redirect "/")))
 
 (def app-handler
   (->
