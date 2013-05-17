@@ -1,0 +1,12 @@
+textarea {
+  border: 1px solid #ccc;
+  font-family: monospace;
+  height: 300px;
+  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  width: 600px;
+}
+input {
+  display: block;
+}
