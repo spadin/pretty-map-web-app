@@ -1,12 +1,12 @@
-(ns clj-pprint.root-spec
+(ns pretty-map.root-spec
   (:use
     [speclj.core]
     [joodo.spec-helpers.controller]
-    [clj-pprint.root]))
+    [pretty-map.root]))
 
-(describe "clj-pprint"
+(describe "pretty-map"
   (with-mock-rendering)
-  (with-routes clj-pprint-routes)
+  (with-routes pretty-map-routes)
   (with default-params {:raw "{:test :test}"})
 
   (it "handles home page"
